@@ -6,15 +6,19 @@
     box-sizing: border-box;
 
 }
+:root{
+    --font1:"DM sans";
+}
 body{
     background:url(../img/maos-da-medica-irreconhecivel-escrevendo-no-formulario-e-digitando-no-teclado-do-laptop.jpg) no-repeat center;
  
 }
 main{
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    
 }
 /*Estilização do to-do-list*/ 
 
@@ -53,19 +57,279 @@ input,select{
     display: none;
 }
 /*Cabeçalho do To-do-list */
+
+ .todo-header{
+    text-align: center;
+    padding: 1.5rem auto .5rem;
+    margin-top: 1rem;
+}
+.todo-header-title-main{
+    display: inline-block;
+    font: normal 700 4vh Arial;
+    color: #FFF;
+    text-shadow: 2px 2px  black;
+    background-image: linear-gradient(to right, rgba(1, 36, 102, 0.137), rgba(7, 23, 94, 0.336));
+}
+/*formulário*/
 .todo-list-container{
-    width: 450px;
+    width: 80%;
     max-width: 450px;
     margin: 3rem auto ;
     padding:1.5rem;
     background-color: #FFF;
+    border-radius: 5vh;
 }
- .todo-header{
+.todo-list-title-first{
     text-align: center;
-    padding: 1.5rem;
+    font: normal 700 6vh var(--font1);
+    padding-bottom: .6rem;
+   
 }
-.todo-header-title-main{
-    font: normal 700 4vh Arial;
-    color: #FFF;
-    text-shadow: 2px 2px  black;
+
+#todo-clinic-form,#editar-formulario{
+    margin-bottom: .5rem;
+    font-weight: bold;
+    font-family: var(--font1);
+
+}
+.form-control{
+    display: flex;
+   
+
+}
+.form-control input{
+    margin-right: .3rem;
+}
+#cancel-edit-btn{
+    margin-top: 1rem;
+
+}
+
+/*to-do-barra de ferramentas*/
+
+#search-bar{
+    padding:1rem;
+    border-bottom:1px solid #CCC;
+    display:flex;
+
+
+}
+#search-bar h4{
+    margin-bottom: .5rem;
+}
+#search{
+    border-right:1px solid #DDD;
+    padding-right:1rem;
+    margin-right:1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+#search form{
+    display: flex;
+}
+#search input{
+    width: 100%;
+    margin-right: 3rem;
+}
+#filtro{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filtro select{
+    flex: 1;
+}
+
+/*todo list*/
+.todo{
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    padding: 1rem;
+    border-bottom:1px solid #ddd ;
+    trasition:.3s;
+}
+.todo h3{
+    flex:1;
+    font-size: .9rem;
+
+
+}
+.todo button{
+    margin-left: .4rem;
+
+}
+.done {
+    background: #395159;
+}
+.done h3{
+    color: #fff;
+    text-decoration: line-through ;
+    font-style: italic;
+}
+
+@media screen and (min-width:1000px){
+    main{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    /*Estilização do to-do-list*/ 
+    
+    #todo-clinic-form{
+        background-color: white;
+    }
+    button{
+        background: #FDFDFD;
+        color:#102F5e;
+        border: 2px solid #102F5e;
+        padding: .3rem .6rem;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .4s;
+    }
+    button:hover{
+        background-color:#102f5e;
+        color: #fff;
+    }
+    button:hover > i{
+        color: #fff;
+    
+    }
+    button i{
+        color: #102F5e;
+        font-weight: bold;
+        pointer-events: none;
+    }
+    input,select{
+        padding: .25rem .5rem;
+    }
+    .hide{
+        display: none;
+    }
+    /*Cabeçalho do To-do-list */
+    
+     .todo-header{
+        text-align: center;
+        padding: 1.5rem auto .5rem;
+    }
+    .todo-header-title-main{
+        display: inline-block;
+        font: normal 700 4vh Arial;
+        color: #FFF;
+        text-shadow: 2px 2px  black;
+        background-image: linear-gradient(to right, rgba(1, 36, 102, 0.137), rgba(7, 23, 94, 0.336));
+        margin-top: 2vh;
+    }
+    /*formulário*/
+    .todo-list-container{
+        width: 80%;
+        height: 30px;
+        max-width: 450px;
+        margin: 1rem auto ;
+        padding:1.5rem;
+        background-color: #FFF;
+        border-radius: 5vh;
+    }
+    .todo-list-title-first{
+        text-align: center;
+        font: normal 700 6vh var(--font1);
+        padding-bottom: .6rem;
+        border-bottom: 2px solid #102F5e;
+    
+    }
+    
+    #todo-clinic-form,#editar-formulario{
+        margin-bottom: .5rem;
+        font-weight: bold;
+    
+    }
+    .form-control{
+        display: flex;
+    
+    }
+    .form-control input{
+        margin-right: .3rem;
+    }
+    #cancel-edit-btn{
+        margin-top: 1rem;
+    
+    }
+    
+    /*to-do-barra de ferramentas*/
+    
+    #search-bar{
+        padding:1rem;
+        border-bottom:1px solid #CCC;
+        display:flex;
+    
+    
+    }
+    #search-bar h4{
+        margin-bottom: .5rem;
+    }
+    #search{
+        border-right:1px solid #DDD;
+        padding-right:1rem;
+        margin-right:1rem;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+    
+    
+    }
+    #search form{
+        display: flex;
+    }
+    #search input{
+        width: 100%;
+        margin-right: 3rem;
+    }
+    #filtro{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #filtro select{
+        flex: 1;
+    }
+    
+    /*todo list*/
+    .todo{
+        display: flex;
+        justify-content:space-around ;
+        align-items: center;
+        padding: 1rem;
+        border-bottom:1px solid #ddd ;
+        trasition:.3s;
+    }
+    .todo h3{
+        flex:1;
+        font-size: .9rem;
+    
+    
+    }
+    .todo button{
+        margin-left: .4rem;
+    
+    }
+    .done {
+        background: #395159;
+    }
+    .done h3{
+        color: #fff;
+        text-decoration: line-through ;
+        font-style: italic;
+    }
+    
 }
