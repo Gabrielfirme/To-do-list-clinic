@@ -331,5 +331,9 @@ input,select{
         text-decoration: line-through ;
         font-style: italic;
     }
+    #footer-todo-list{
+       display: flex;
+       justify-content: center;
+    }
     
 }
