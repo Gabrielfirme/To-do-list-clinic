@@ -44,6 +44,13 @@ const cancelEditBtn = document.querySelector("#cancel-edit-btn");
     
 };
 
+const toggleForms = () =>{
+    editForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");
+    todoList.classList.toggle("hide");
+
+};
+
 //eventos
 
 todoForm.addEventListener("click",(e) =>{
@@ -54,4 +61,29 @@ todoForm.addEventListener("click",(e) =>{
         saveTodo(inputValue)
         //salvar todo o to-do//
     }
+});
+
+document.addEventListener("click",(e) =>{
+    const targetEl = e.target
+    const parentEl = targetEl.closest("div");
+//botão para assinalar a tarefa como já executada//
+    if(targetEl.classList.contains("finish-todo")){
+        parentEl.classList.toggle("done");
+    }
+//botão para remover itens //
+    if(targetEl.classList.contains("remove-todo")) {
+        parentEl.remove();
+    }
+    
+    if(targetEl.classList.contains("edit-todo")){
+        //esta função vai esconder um formulário e mostrar outro//
+        toggleForms()
+    }
+});
+
+cancelEditBtn.addEventListener("click",(e) =>{
+    e.preventDefault();
+
+    toggleForms();
+
 });
