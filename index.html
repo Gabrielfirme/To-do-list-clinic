@@ -9,10 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Hind+Siliguri:wght@300;400;500&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="assets/js/to-do.js" defer></script>
     <title>Clinic Health Plus</title>
-    <!--Biblioteca de icones font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="assets/js/to-do.js" defer></script>
 </head>
 <body>
     <main>
@@ -35,29 +34,22 @@
                 </div>
                 <button id="cancel-edit-btn">Cancelar</button>
             </form>
-            <!--toolbar no projeto original-->
+            
             <div id="search-bar">
                 <div id="search">
                     <h4>Pesquisar Itens </h4>
                     <form>
-                        <input type="text" id="serch-input" placeholder="buscar">
+                        <input type="text" id="search-input" placeholder="buscar">
                         <button id="erase-button">
                             <i class="fa-solid fa-delete-left"></i>
                         </button>
                     </form>
                 </div>
-                <div id="filtro">
-                    <h4> Filtro </h4>
-                    <select  id="selection-filters">
-                        <option value="todos"> Todos itens </option>
-                        <option value="feitos"> Feito</option>
-                        <option value="pendente"> Para fazer</option>
-                    </select>
-                </div>
+               
             </div>
             <div id="todo-list">
                 <div class="todo done">
-                    <h3>estou fazendo alguma coisa</h3>
+                    <h3>Luvas </h3>
                     <button class="finish-todo">
                         <i class="fa-solid fa-check"></i>
                     </button>
@@ -69,7 +61,7 @@
                     </button>
                 </div>
                 <div class="todo">
-                    <h3>Estudar JavaScript</h3>
+                    <h3>Máscaras</h3>
                     <button class="finish-todo">
                         <i class="fa-solid fa-check"></i>
                     </button>
@@ -84,9 +76,6 @@
         </div>
     </main>
 
-    <footer id="footer-todo-list">
-        <h4> Desenvolvido por <a href="https://www.linkedin.com/in/gabriel-firme-b57355225/" target="_blank"> Gabriel Firme </a> </h4>
-    </footer>
-    
+  
 </body>
 </html>

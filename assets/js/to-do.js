@@ -7,45 +7,45 @@ const editForm = document.querySelector("#editar-formulario");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const searchInput = document.querySelector("#search-input");
-const eraseBtn = document.querySelector("erase-button");
-const filterBtn = document.querySelector("filter-select");
+const eraseBtn = document.querySelector("#erase-button");
+
 
 let oldInputvalue;
 
 
 
 //funções
-//criar a div por meio do js//
+
  const saveTodo = (text, done = 0, save = 1) => {
     const todo = document.createElement("div");
     todo.classList.add("todo");
-//criar titulo//
+
     const todoTitle = document.createElement("h3");
     todoTitle.innerText = text;
     todo.appendChild(todoTitle);
 
-//botão check(feito)//
+
     const doneBtn = document.createElement("button");
     doneBtn.classList.add("finish-todo");
     doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
     todo.appendChild(doneBtn);
-//botão para editar tarefa//
+
     const editBtn = document.createElement("button");
     editBtn.classList.add("edit-todo");
     editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
     todo.appendChild(editBtn);
-//botão para excluir tarefa//
+
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("remove-todo");
     deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     todo.appendChild(deleteBtn);
 
-    //utilizando dados da local storage//
+    
     if (done) {
         todo.classList.add("done");
     }
 
-    if(save) {
+    if (save) {
         saveTodoLocalStorage({text, done : 0});
     }
 
@@ -64,7 +64,7 @@ const toggleForms = () => {
 
 };
 
-const updateTodo = (text) =>{
+const updateTodo = (text) => {
     const todos = document.querySelectorAll(".todo");
 
     todos.forEach((todo) => {
@@ -73,8 +73,8 @@ const updateTodo = (text) =>{
         if(todoTitle.innerText === oldInputvalue) {
          todoTitle.innerText = text;
 
-            //utilizando dados da local storage//
-            updateTodoLocalStorage(oldInputvalue,text);
+            
+            updateTodoLocalStorage(oldInputvalue, text);
         }
     });
 };
@@ -146,7 +146,7 @@ todoForm.addEventListener("click",(e) =>{
     const inputValue = todoInput.value;
     if(inputValue){
         saveTodo(inputValue);
-        //salvar todo o to-do//
+        
     }
 });
 
@@ -158,14 +158,14 @@ document.addEventListener("click", (e) =>{
     if(parentEl && parentEl.querySelector("h3")) {
         todoTitle = parentEl.querySelector("h3").innerText || "";
     }
-//botão para assinalar a tarefa como já executada//
+
     if(targetEl.classList.contains("finish-todo")) {
         parentEl.classList.toggle("done");
 
 
         updateTodoStatusLocalStorage(todoTitle);
     }
-//botão para remover itens //
+
     if(targetEl.classList.contains("remove-todo")) {
         parentEl.remove();
 
@@ -173,7 +173,7 @@ document.addEventListener("click", (e) =>{
     }
     
     if(targetEl.classList.contains("edit-todo")) {
-        //esta função vai esconder um formulário e mostrar outro//
+        
         toggleForms();
 
 
@@ -203,19 +203,24 @@ editForm.addEventListener("submit", (e) => {
     toggleForms();
 
 });
-searchInput.addEventListener("keyup", (e) => {
-    const search = e.target.value;
+
+searchInput.addEventListener("keyup" , (e) => {
+const search = e.target.value;
 
     getSearchedTodos(search);
 });
 
-filterBtn.addEventListener("change", (e) => {
-    const filterValue = e.target.value;
+eraseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    searchInput.value = "";
 
-    filterTodos(filterValue);
+    searchInput.dispatchEvent(new Event("keyup"));
 });
 
-//local storage 
+
+
+
 const getTodosLocalStorage = () => {
     const todos =JSON.parse(localStorage.getItem("todos")) || [];
 
