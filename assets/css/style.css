@@ -119,6 +119,8 @@ input,select{
     border-bottom:1px solid var(--border-color);
     display:flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 90%;
 
 
@@ -129,36 +131,28 @@ input,select{
 }
 #search{
     
-    padding-right:1rem;
-    margin-right:1rem;
-    width: 65%;
+    padding-right:0;
+    margin-right:-2.5rem;
+    width: 108%;
     display: flex;
     flex-direction: column;
+   
+
+    
 
 
 }
-#search h4{
 
-}
+
 #search form{
     display: flex;
 }
 #search input{
     width: 20vh;
-    margin-right: 1rem;
-}
-#filtro{
-    width: 35%;
-    display: flex;
-    flex-direction: column;
+    margin-right: .5rem;
 }
 
-#filtro select{
-    flex: 1;
-}
-#select-filters option{
-    width: 20vh;
-}
+
 /*todo list*/
 .todo{
     display: flex;
@@ -195,7 +189,7 @@ input,select{
     text-align: center;
     
 }
-@media (min-width:780px) {
+@media (min-width:600px) {
     main{
         margin: 0;
         display: flex;
@@ -262,6 +256,7 @@ input,select{
     }
     
     #todo-clinic-form,#editar-formulario{
+        font: normal bold 4vh var(--font1);
         
         margin:1rem auto .5rem;
         font-weight: bold;
@@ -293,14 +288,14 @@ input,select{
   
     }
     #search-bar h4{
-        font: normal bold 3vh var(--font1);
+        font: normal bold 4vh var(--font1);
         color: black;
         margin-bottom: .5rem;
     }
     #search{
         
         padding-right:1rem;
-        margin-right:1rem;
+        margin-right:-1rem;
         width: 65%;
         display: flex;
       
@@ -359,6 +354,9 @@ input,select{
     }
     
 }
+
+
+
 
 @media (min-width:1050px){
     main{
@@ -428,8 +426,9 @@ input,select{
     }
     
     #todo-clinic-form,#editar-formulario{
+        font: normal bold 4vh var(--font1);
         margin:1rem auto .5rem;
-        font-weight: bold;
+    
     
     }
     .form-control{
@@ -452,10 +451,11 @@ input,select{
         border-bottom:1px solid #CCC;
         display:flex;
         flex-direction: row;
+    
   
     }
     #search-bar h4{
-        font: normal bold 2vh var(--font1);
+        font: normal bold 3vh var(--font1);
         color: black;
         margin-bottom: .5rem;
     }
@@ -511,6 +511,161 @@ input,select{
     }
 
 }
+@media (min-width:1920px){
+    main{
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+    /*Estilização do to-do-list*/ 
+    
+    #todo-clinic-form{
+        background:#FDFDFD;
+    }
+    button{
+        background: #FDFDFD;
+        color:#102F5e;
+        border: 2px solid #102F5e;
+        padding: .3rem .6rem;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .4s;
+    }
+    button:hover{
+        background-color:#102f5e;
+        color: var(--btn-hover);
+    }
+    button:hover > i{
+        color: var(--btn-hover);
+    
+    }
+    button i{
+        color: #102F5e;
+        font-weight: bold;
+        pointer-events: none;
+    }
+    input,select{
+        padding: .25rem .5rem;
+    }
+    .hide{
+        display: none;
+    }
+    /*formulário*/
+    .todo-list-container{
+        width: 90%;
+        height: 80%;
+        max-width: 450px;
+        margin: 1rem auto ;
+        padding:1.5rem;
+        background-color: #FFF;
+        border-radius: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo-list-title-first{
+        text-align: center;
+        font: normal 700 6vh var(--font1);
+        padding-bottom: .2rem;
+     
+    
+    }
+    
+    #todo-clinic-form,#editar-formulario{
+        font: normal bold 2vh var(--font1);
+        margin:1rem auto .5rem;
+    
+    
+    }
+    .form-control{
+        display: flex;
+    
+    }
+    .form-control input{
+        margin-right: .3rem;
+    }
+    #cancel-edit-btn{
+        margin-top: 1rem;
+    
+    }
+    
+    /*to-do-barra de ferramentas*/
+    
+    #search-bar{
+        width: 90%;
+        padding:1rem ;
+        border-bottom:1px solid #CCC;
+        display:flex;
+        flex-direction: row;
+    
+  
+    }
+    #search-bar h4{
+        font: normal bold 2vh var(--font1);
+        color: black;
+        margin-bottom: .5rem;
+    }
+    #search{
+       
+      
+        width: 65%;
+        display: flex;
+     
+    
+    
+    }
+    #search form{
+        display: flex;
+        
+    }
+    #search input{
+        width: 100%;
+        margin-right: .5rem;
+        
+    }
+   
+    
+    /*todo list*/
+    .todo{
+        display: flex;
+        justify-content:space-around ;
+        align-items: center;
+        padding: 1rem;
+        border-bottom:1px solid #ddd ;
+        transition:.3s;
+    }
+    .todo h3{
+        flex:1;
+        font-size: .9rem;
+    
+    
+    }
+    .todo button{
+        margin-left: .4rem;
+    
+    }
+    .done {
+        background: #395159;
+    }
+    .done h3{
+        color: #fff;
+        text-decoration: line-through ;
+        font-style: italic;
+    }
+    #footer-todo-list{
+       display: flex;
+       justify-content: center;
+    }
+
+}
+
 
 
 
