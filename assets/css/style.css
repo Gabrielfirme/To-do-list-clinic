@@ -86,7 +86,7 @@ input,select{
 .todo-list-title-first{
     display: block;
     text-align: center;
-    font: normal 700 6vh var(--font1);
+    font: normal 700 3vh var(--font1);
     padding-bottom: .6rem;
    
    
@@ -159,6 +159,7 @@ input,select{
     justify-content:space-around ;
     align-items: center;
     padding: 1rem;
+    margin-top: .6rem;
     border-bottom:1px solid #ddd ;
     trasition:.3s;
 }
@@ -180,15 +181,7 @@ input,select{
     text-decoration: line-through ;
     font-style: italic;
 }
-#footer-todo-list{
-    width: 100%;
-    display: block;
-    background: white;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    
-}
+
 @media (min-width:600px) {
     main{
         margin: 0;
@@ -327,7 +320,7 @@ input,select{
         align-items: center;
         padding: 1rem;
         border-bottom:1px solid #ddd ;
-        trasition:.3s;
+        transition:.3s;
     }
     .todo h3{
         flex:1;
@@ -446,11 +439,12 @@ input,select{
     /*to-do-barra de ferramentas*/
     
     #search-bar{
-        width: 90%;
+        width: 58vh;
         padding:1rem ;
         border-bottom:1px solid #CCC;
         display:flex;
         flex-direction: row;
+        
     
   
     }
@@ -474,7 +468,7 @@ input,select{
     }
     #search input{
         width: 100%;
-        margin-right: .5rem;
+        margin-right: 1.5rem;
     }
    
     
